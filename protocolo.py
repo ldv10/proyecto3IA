@@ -63,13 +63,13 @@ def play(y):
     if gold == 0:
         totPiezas = pickheur(jugador,parseado)
         if totPiezas <=20:
-            t = tiroAlfa(jugador,parseado,4,heur2) #minimax con heuristica1 (de piezas)
-            #t = tiro(jugador,parseado,5,heur1)
+            #t = tiroAlfa(jugador,parseado,4,heur2) #minimax con heuristica1 (de piezas)
+            t = tiro(jugador,parseado,5,heur1) #alfabeta con heuristica 2 (casillas con peso)
             tiro1 = parser(t,parseado)
             print("Tiro bueno con alfabeta heurisitca 2")
         elif totPiezas > 20:
-            t = tiroAlfa(jugador,parseado,4,heur2)
-            #t = tiro(jugador,parseado,5,heur1) #minimax con heuristica1 (de piezas)
+            #t = tiroAlfa(jugador,parseado,4,heur2)
+            t = tiro(jugador,parseado,5,heur1) #minimax con heuristica1 (de piezas)
             tiro1 = parser(t,parseado)
             print("Tiro bueno con minimax heuristica 1")
     else:
